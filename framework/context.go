@@ -115,11 +115,11 @@ func (ctx *Context) QueryArray(key string, def []string) []string {
 	return def
 }
 
-func (ctx *Context) QueryAll() map[string]string {
+func (ctx *Context) QueryAll() map[string][]string {
 	if ctx.request != nil {
 		return map[string][]string(ctx.request.URL.Query())
 	}
-	return map[string]string{}
+	return map[string][]string{}
 }
 
 // #endregion
